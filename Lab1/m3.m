@@ -6,4 +6,4 @@ cv = conv(g,h);
 stem(0:length(cv)-1,cv);
 xlabel('Time');
 ylabel('Amplitude');
-title('Time domain response')
+title('Time domain response');
