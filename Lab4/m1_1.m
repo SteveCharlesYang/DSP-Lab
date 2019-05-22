@@ -1,0 +1,14 @@
+Wp = [0.45 0.65];
+Ws = [0.3 0.75]; 
+Rp = 1; 
+Rs = 40; 
+[N,Wn] = buttord(Wp, Ws, Rp, Rs); 
+[b,a] = butter(N,Wn); 
+[h,omega] = freqz(b,a,256); 
+gain = 20*log10(abs(h)); 
+plot (omega/pi,gain);
+grid; 
+axis([0 1 -50 0]); 
+xlabel('\omega/\pi'); 
+ylabel('Gain, dB'); 
+title('IIR Butterworth Bandpass Filter');
